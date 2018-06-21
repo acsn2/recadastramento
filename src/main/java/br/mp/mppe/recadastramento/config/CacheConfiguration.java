@@ -38,6 +38,14 @@ public class CacheConfiguration {
             cm.createCache(br.mp.mppe.recadastramento.domain.User.class.getName(), jcacheConfiguration);
             cm.createCache(br.mp.mppe.recadastramento.domain.Authority.class.getName(), jcacheConfiguration);
             cm.createCache(br.mp.mppe.recadastramento.domain.User.class.getName() + ".authorities", jcacheConfiguration);
+            cm.createCache(br.mp.mppe.recadastramento.domain.Servidor.class.getName(), jcacheConfiguration);
+            cm.createCache(br.mp.mppe.recadastramento.domain.Dependente.class.getName(), jcacheConfiguration);
+            cm.createCache(br.mp.mppe.recadastramento.domain.ParenteServidor.class.getName(), jcacheConfiguration);
+            cm.createCache(br.mp.mppe.recadastramento.domain.EstadoCivil.class.getName(), jcacheConfiguration);
+            cm.createCache(br.mp.mppe.recadastramento.domain.Orgao.class.getName(), jcacheConfiguration);
+            cm.createCache(br.mp.mppe.recadastramento.domain.ServidorTipo.class.getName(), jcacheConfiguration);
+            cm.createCache(br.mp.mppe.recadastramento.domain.Pais.class.getName(), jcacheConfiguration);
+            cm.createCache(br.mp.mppe.recadastramento.domain.Cidade.class.getName(), jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }
