@@ -1,0 +1,51 @@
+{
+    "name": "Pais",
+    "fields": [
+        {
+            "fieldName": "codPais",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "nomePais",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "task",
+            "otherEntityName": "servidor",
+            "otherEntityField": "nascimento",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "pais"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "task",
+            "otherEntityName": "servidor",
+            "otherEntityField": "nacionalidade",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "pais"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "task",
+            "otherEntityName": "servidor",
+            "otherEntityField": "exterior",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "pais"
+        }
+    ],
+    "changelogDate": "20180621191933",
+    "entityTableName": "pais",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

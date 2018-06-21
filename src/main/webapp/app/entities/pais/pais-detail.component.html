@@ -1,0 +1,49 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="pais">
+            <h2><span>Pais</span> {{pais.id}}</h2>
+            <hr>
+            <-alert-error></-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Cod Pais</span></dt>
+                <dd>
+                    <span>{{pais.codPais}}</span>
+                </dd>
+                <dt><span>Nome Pais</span></dt>
+                <dd>
+                    <span>{{pais.nomePais}}</span>
+                </dd>
+                <dt><span>Task</span></dt>
+                <dd>
+                    <div *ngIf="pais.task">
+                        <a [routerLink]="['/servidor', pais.task?.id, 'view']">{{pais.task?.nascimento}}</a>
+                    </div>
+                </dd>
+                <dt><span>Task</span></dt>
+                <dd>
+                    <div *ngIf="pais.task">
+                        <a [routerLink]="['/servidor', pais.task?.id, 'view']">{{pais.task?.nacionalidade}}</a>
+                    </div>
+                </dd>
+                <dt><span>Task</span></dt>
+                <dd>
+                    <div *ngIf="pais.task">
+                        <a [routerLink]="['/servidor', pais.task?.id, 'view']">{{pais.task?.exterior}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/pais', pais.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

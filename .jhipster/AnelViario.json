@@ -1,0 +1,59 @@
+{
+    "name": "AnelViario",
+    "fields": [
+        {
+            "fieldName": "codAnel",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "descAnel",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "task",
+            "otherEntityName": "servidor",
+            "otherEntityField": "casaTrabalho1",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "anelViario"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "task",
+            "otherEntityName": "servidor",
+            "otherEntityField": "casaTrabalho2",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "anelViario"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "task",
+            "otherEntityName": "servidor",
+            "otherEntityField": "trabalhoCasa1",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "anelViario"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "task",
+            "otherEntityName": "servidor",
+            "otherEntityField": "trabalhoCasa2",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "anelViario"
+        }
+    ],
+    "changelogDate": "20180621191940",
+    "entityTableName": "anel_viario",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}
