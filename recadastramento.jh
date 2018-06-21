@@ -1,0 +1,230 @@
+entity Servidor {
+	ser_matricula Long required,
+    ser_username String required,
+    nome_social	 String,
+    data_nascimento	LocalDate required,
+    ser_nome_pai String required,
+    ser_nome_mae String required,    
+    cpf	Long required,
+    cpf_pai	Long,
+    cpf_mae Long,
+    rg_num	String required,
+    rg_uf String required,
+    rg_orgao_exp String required,
+    rg_data_exp LocalDate required,
+    sexo String required,
+ //   fk_escivil_num Integer required,
+    // ver leiaut esocial valores válidos pag74
+    tipo_sangue String	required,
+    fator_rh String required,
+    doador_sangue String required,
+    deficiencia_fisica String required,
+    deficiencia_visual String required,
+    deficiencia_auditiva String required,
+    deficiencia_mental String required,
+    deficiencia_intelec String required,
+    defic_Reab_Readaptado	String required,
+    defic_observacao	String, //tam. 255
+    preenche_cota String required,
+    email_pessoal String required,
+    email_altern  String,
+    celular String,
+    celular_operadora String,
+    ser_pasep	String required,
+    ser_ipsep	String,
+    ser_inss	String,
+    ctps_num	String, //(11)
+    ctps_serie	String, //(5)
+    ctps_emissao LocalDate,
+    ctps_uf		String, //(2)
+    orgao_classe_num	String, //(14)
+    orgaocl_nome	String, //(18)
+    orgaocl_uf		String, //(2)
+    orcl_dtExp		LocalDate,
+    orcl_dtValid	LocalDate,
+    ser_reservista	String, //(15)
+    reservista_classe	String, //(30)
+    num_ric		String, //tam 11 RIC= Registro de Identificação Civil
+    orgao_emissor_ric	String, //tam. 20 
+    uf_ric	String, // tam.2
+    dat_exped_ric	LocalDate,
+    tit_eleitor_num	String required, //(15)
+    tit_eleitor_zona	String required, //(10)
+    tit_eleitor_secao	String required, //(10)
+    tit_eleitor_local	String required, //(50)
+    cnh_num		String, //(12)
+    cnh_categoria	String, //(2)
+    cnh_dat_validade	LocalDate,
+    cnh_dat_exped		LocalDate,
+    cnh_uf_emissor		String, //(2)
+    cnh_dat_prim_hab	LocalDate,
+    sassepe_num		String, //(15)
+//    fk_org_publ_origem	Integer, //tab. orgao arquimedes
+//    fk_sertp_numero		Integer,
+//    fk_pais_nascim		Integer, //tabela 6 do esocial
+//    fk_nacionalidade	Integer, //tabela 6 do esocial
+//    fk_naturalidade		Integer, //código do ibge
+      uf_natural		String, //tam. 2
+//    fk_racacor			Integer,
+    //ver leiaut esocial valores válidos pag74
+//    fk_escolaridade		Integer, 
+    //ver leiaut esocial valores válidos pag75 - grauInstr
+    prim_emprego		String, //S/N
+//    fk_categoria_esocial		Integer, 
+    // tabela 1 do esocial, deverá ter um enxugamento dessa tabela
+    exerc_magisterio	String, //S/N
+//    fk_regime_trab		Integer, 
+    // 1- CLT E legislações trabalhistas específicas; 2- Estatutário
+//    fk_reg_prev			Integer,
+    /**1- Regime Geral da Previdência Social - RGPS
+     *2- Regime Próprio de Previdência Social - RPPS
+     *3- Regime de Previdência Social no Exterior
+    */
+    tipo_logradouro		Integer required,   // tabela 20 do esocial
+    desc_logradouro		String required, //tam. 20
+    nr_endereco		String required, // tam. 10
+    compl_endereco	String required, //tam. 30
+    bairro_endereco	String required, //tam. 60 
+    cep_endereco	Integer required, //tam. 8
+//  	fk_munic_end	Integer required, //conforme tabela do IBGE
+    uf_endereco		String required, //tam 2
+    telefone1		String,
+    telefone2		String,
+//    fk_pais_end_ext	Integer, //tabela 6 do esocial
+    desc_logra_ext	String, //tam. 80
+    nr_logra_ext	String, //tam. 10
+    compl_logra_ext	String, //tam. 30
+    bairro_end_ext	String, //tam. 60
+    cidade_end_ext	String, //tam. 50
+    codPostal_end_ext String, //tam. 12
+    //Estrangeiro
+    num_rne			String, //tam. 14 rne= registro nacional estrangeiro
+    orgao_emissor_rne	String, //tam. 20
+    uf_emissor_rne	String,// tam. 2
+    dat_expe_rge	LocalDate,
+    dat_chegada		LocalDate,
+    class_trab_estr	Integer, 
+    // conforme descrito no leiout esocial classTrabEstrang pag. 76
+    casado_br		String, // S/N
+    filhos_br		String, // S/N
+    // Linha de ônibus
+    aux_transporte	String, // S/N
+    aux_trans_linha1 String,
+//    fk_aux_trans_anel1  String,
+    aux_trans_linha2 String,
+//    fk_aux_trans_anel2 String,
+    aux_trans_linha3 String,
+//    fk_aux_trans_anel3  String,
+    aux_trans_linha4 String,
+//    fk_aux_trans_anel4 String,    
+    trab_aposentado	String, // S/N
+}
+
+entity Dependente {
+    fk_dependente	Long required,
+   	tp_dependente 	Integer required, // tabela 07 do esocial
+	nome_depend   	String required, //tam. 70
+    dat_nac		  	LocalDate required,
+    cpf_depend		String, //tan.11, obrigatório se >= 8 anos
+    dep_IRRF		String, // S/N
+    dep_SF			String, // S/N
+    incapac_trab	String // S/N
+}
+
+entity ParenteServidor {
+	fk_parenteServidor	Long required,
+	ser_matricula_parente	Long,
+    fk_grau_parentesco		String //Falta definir lista
+}
+
+entity EstadoCivil {
+	// ver leiaut esocial valores válidos pag74
+	num_est_civil	Integer required,
+	desc_est_civil	String
+}
+
+entity Orgao {
+	num_orgao	Integer required,
+	desc_orgao	String
+}
+
+entity Servidor_Tipo {
+	sertp_numero Long required,
+	sertp_nome	String,
+    sertp_indicativo	String
+}
+
+entity Pais {
+	cod_pais Integer required,
+	nome_pais	String
+}
+
+entity Cidade {
+	cod_cidade Integer required,
+	nome_cidade	String
+}
+
+entity RacaCor {
+	// ver leiaut esocial valores válidos pag74
+	cod_racacor Integer required,
+	desc_racacor String
+}
+
+entity Escolaridade {
+	// ver leiaut esocial valores válidos pag75
+	cod_escolaridade Integer required,
+	desc_escolaridade String
+}
+
+entity CategoriaESocial {
+	cod_categoria Integer required,
+	desc_categoria String,
+    grupo_cat	String
+}
+
+entity RegimeTrabalho {
+	cod_regTrab Integer required,
+	desc_regTrab String
+}
+
+entity RegimePrevidenciario {
+	cod_regPrev Integer required,
+	desc_regPrev String
+}
+
+entity AnelViario {
+	cod_anel Integer required,
+	desc_anel String 
+    //valores possíveis A, B, D e FORA DA RMR
+}
+
+relationship OneToMany {
+	Servidor{ser_matricula} to Dependente,
+    Servidor{ser_matricula} to ParenteServidor
+	
+}
+
+relationship OneToOne {
+	EstadoCivil to Servidor,
+    Servidor_Tipo to Servidor ,
+    Pais{task(nascimento)} to Servidor ,
+    Pais{task(nacionalidade)} to Servidor ,
+    Pais{task(exterior)} to Servidor ,
+    Cidade{task(naturalidade)} to Servidor ,
+    Cidade{task(Endereco)} to Servidor ,
+    RacaCor to Servidor ,
+    Orgao to Servidor ,
+    Escolaridade to Servidor ,
+    CategoriaESocial to Servidor ,
+    RegimeTrabalho to Servidor ,
+    RegimePrevidenciario to Servidor ,
+    AnelViario{task(CasaTrabalho1)}  to Servidor,
+    AnelViario{task(CasaTrabalho2)}  to Servidor, 
+    AnelViario{task(TrabalhoCasa1)}  to Servidor, 
+    AnelViario{task(TrabalhoCasa2)}  to Servidor 
+    
+}
+
+
+
+
