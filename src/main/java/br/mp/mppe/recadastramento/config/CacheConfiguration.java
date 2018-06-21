@@ -38,6 +38,21 @@ public class CacheConfiguration {
             cm.createCache(br.mp.mppe.recadastramento.domain.User.class.getName(), jcacheConfiguration);
             cm.createCache(br.mp.mppe.recadastramento.domain.Authority.class.getName(), jcacheConfiguration);
             cm.createCache(br.mp.mppe.recadastramento.domain.User.class.getName() + ".authorities", jcacheConfiguration);
+            cm.createCache(br.mp.mppe.recadastramento.domain.Servidor.class.getName(), jcacheConfiguration);
+            cm.createCache(br.mp.mppe.recadastramento.domain.Servidor.class.getName() + ".serMatriculas", jcacheConfiguration);
+            cm.createCache(br.mp.mppe.recadastramento.domain.Dependente.class.getName(), jcacheConfiguration);
+            cm.createCache(br.mp.mppe.recadastramento.domain.ParenteServidor.class.getName(), jcacheConfiguration);
+            cm.createCache(br.mp.mppe.recadastramento.domain.EstadoCivil.class.getName(), jcacheConfiguration);
+            cm.createCache(br.mp.mppe.recadastramento.domain.Orgao.class.getName(), jcacheConfiguration);
+            cm.createCache(br.mp.mppe.recadastramento.domain.ServidorTipo.class.getName(), jcacheConfiguration);
+            cm.createCache(br.mp.mppe.recadastramento.domain.Pais.class.getName(), jcacheConfiguration);
+            cm.createCache(br.mp.mppe.recadastramento.domain.Cidade.class.getName(), jcacheConfiguration);
+            cm.createCache(br.mp.mppe.recadastramento.domain.RacaCor.class.getName(), jcacheConfiguration);
+            cm.createCache(br.mp.mppe.recadastramento.domain.Escolaridade.class.getName(), jcacheConfiguration);
+            cm.createCache(br.mp.mppe.recadastramento.domain.CategoriaESocial.class.getName(), jcacheConfiguration);
+            cm.createCache(br.mp.mppe.recadastramento.domain.RegimeTrabalho.class.getName(), jcacheConfiguration);
+            cm.createCache(br.mp.mppe.recadastramento.domain.RegimePrevidenciario.class.getName(), jcacheConfiguration);
+            cm.createCache(br.mp.mppe.recadastramento.domain.AnelViario.class.getName(), jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }

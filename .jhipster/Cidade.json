@@ -1,0 +1,43 @@
+{
+    "name": "Cidade",
+    "fields": [
+        {
+            "fieldName": "codCidade",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "nomeCidade",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "task",
+            "otherEntityName": "servidor",
+            "otherEntityField": "naturalidade",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "cidade"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "task",
+            "otherEntityName": "servidor",
+            "otherEntityField": "endereco",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "cidade"
+        }
+    ],
+    "changelogDate": "20180621191934",
+    "entityTableName": "cidade",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}
